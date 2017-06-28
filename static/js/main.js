@@ -2,7 +2,6 @@ let $ = window.$;
 
 $('.pokemon-container').on('click', 'img', function () {
   $.get('http://pokeapi.co/api/v1/pokemon/' + $(this).attr('id'), function (data) {
-    window.scrollTo(0,0);
     $('.pokedex img').attr('src', $('#' + data.national_id).attr('src'));
     $('.pokedex h2').text(data.name);
 
